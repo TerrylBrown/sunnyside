@@ -43,11 +43,12 @@ const navToggle = (() => {
 navToggle.init();
 
 const smoothScroll = (() => {
-  
   const $heroScrollBtn = document.getElementById('hero-scroll-btn');
   const $panelsTransform = document.getElementById('panels-transform');
 
-  const scrollTop = ($el) => {
+  const scrollTop = (e, $el) => {
+    e.preventDefault();
+
     const panelsTransformOffsetTop = $el.getBoundingClientRect().top;
     const documentSrollTop = document.documentElement.scrollTop;
 
@@ -59,7 +60,7 @@ const smoothScroll = (() => {
   };
 
   const init = () => {
-    $heroScrollBtn.addEventListener('click', scrollTop.bind(null, $panelsTransform));
+    $heroScrollBtn.addEventListener('click', e => scrollTop(e, $panelsTransform));
   }
 
   return { init };
