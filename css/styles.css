@@ -16,11 +16,13 @@
     --color-white: #ffffff;
     --color-dark: #2b313d;
     --color-grey: #7d7b7d;
+    --color-grey--dark: #333333;
     --color-grey--light: #aaabad;
     --color-yellow: #fad604;
     --color-pink: #ff7d6d;
     --color-green: #2c7564;
     --color-green--light: #9cd9ca;    
+    --color-tan: #fffbf8;
 }
 
 /**************************************************
@@ -137,7 +139,8 @@ p {
     font-weight: 900;
     color: var(--color-dark);
     padding: .25rem;
-    line-height: .75;    
+    line-height: .75;  
+    z-index: 2;  
 }
 
 .link-underlined:before {
@@ -311,6 +314,7 @@ p {
     text-align: center;
     max-width: 30rem;
     margin: 0 auto;
+    background: var(--color-tan);
 }
 
 .panel--text p {
@@ -349,6 +353,7 @@ p {
 **************************************************/
 .testimonials {
     padding: 3rem 1rem;
+    background: var(--color-tan);
 }
 
 .testimonials__title {
@@ -365,6 +370,10 @@ p {
 
 .testimonial {
     max-width: 22rem;
+}
+
+.testimonial__para {
+    color: var(--color-grey);
 }
 
 .testimonial__image {
@@ -582,7 +591,10 @@ p {
     * Testimonials
     **************************************************/
     .testimonials {
-        padding: 5rem 1rem;
+        padding: 5rem 1rem;        
+    }
+
+    .testimonials-wrapper {
         max-width: 68rem;
         margin: 0 auto;
     }
@@ -655,7 +667,7 @@ p {
     * HERO
     **************************************************/  
     .hero {        
-        height: 48rem;   
+        height: 50rem;   
         padding: 0 2rem;
     }
 
