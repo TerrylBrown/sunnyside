@@ -45,6 +45,10 @@
 /**************************************************
 * Typography
 **************************************************/
+html {
+    scroll-behavior: smooth;
+}
+
 html,
 body {
     font-family: var(--body-font);

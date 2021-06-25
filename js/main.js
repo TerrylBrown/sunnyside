@@ -1,43 +1,68 @@
 'use strict';
 
 const resizeAnimationStopper = (() => {
-    let resizeTimer;
+  let resizeTimer;
 
-    const disableTimeout = () => {
-      document.body.classList.add('resize-animation-stopper');
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        document.body.classList.remove('resize-animation-stopper');
-      }, 400);
+  const disableTimeout = () => {
+    document.body.classList.add('resize-animation-stopper');
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      document.body.classList.remove('resize-animation-stopper');
+    }, 400);
+  }
+
+  const init = () => {
+    window.addEventListener('resize', disableTimeout);
+  }       
+
+  return { init };
+})();
+
+resizeAnimationStopper.init();
+
+const navToggle = (() => {
+  const $navToggle = document.getElementById('nav-toggle');
+  const $siteNav = document.getElementById('site-nav');
+
+  const toggleMenu = (e) => {
+    e.preventDefault();
+    if ($siteNav.classList.contains('site-nav--active')) {
+      $siteNav.classList.remove('site-nav--active');
+      return;
     }
+    $siteNav.classList.add('site-nav--active');
+  };
 
-    const init = () => {
-      window.addEventListener('resize', disableTimeout);
-    }       
+  const init = () => {
+    $navToggle.addEventListener('click', toggleMenu);
+  };
 
-    return { init };
-  })();
+  return { init };
+})();
 
-  resizeAnimationStopper.init();
+navToggle.init();
 
-  const navToggle = (() => {
-    const $navToggle = document.getElementById('nav-toggle');
-    const $siteNav = document.getElementById('site-nav');
+const smoothScroll = (() => {
+  
+  const $heroScrollBtn = document.getElementById('hero-scroll-btn');
+  const $panelsTransform = document.getElementById('panels-transform');
 
-    const toggleMenu = (e) => {
-      e.preventDefault();
-      if ($siteNav.classList.contains('site-nav--active')) {
-        $siteNav.classList.remove('site-nav--active');
-        return;
-      }
-      $siteNav.classList.add('site-nav--active');
-    };
+  const scrollTop = ($el) => {
+    const panelsTransformOffsetTop = $el.getBoundingClientRect().top;
+    const documentSrollTop = document.documentElement.scrollTop;
 
-    const init = () => {
-      $navToggle.addEventListener('click', toggleMenu);
-    };
+    window.scroll({
+      top: panelsTransformOffsetTop + documentSrollTop, 
+      left: 0, 
+      behavior: 'smooth'
+    });
+  };
 
-    return { init };
-  })();
+  const init = () => {
+    $heroScrollBtn.addEventListener('click', scrollTop.bind(null, $panelsTransform));
+  }
 
-  navToggle.init();
+  return { init };
+})();
+
+smoothScroll.init();
