@@ -1,6 +1,5 @@
-# Frontend Mentor - Sunnyside agency landing page
-
 ![Design preview for the Sunnyside agency landing page coding challenge](./design/desktop-preview.jpg)
 
-# Coded with...
-Built this using Html, CSS, and just a little JS.
+Built using Html, Css, and just a little Js.
+
+[View Site](https://terrylbrown.github.io/sunnyside/)
