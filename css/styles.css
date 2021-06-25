@@ -1,0 +1,758 @@
+/****************************************************************************************************
+* BASE STYLES
+****************************************************************************************************/
+
+/**************************************************
+* Variables
+**************************************************/
+:root {
+    /* typeography */
+    --body-font: 'Barlow', sans-serif;
+    --header-font: 'Fraunces', serif;
+
+    /* colors */
+    --color-blue: #3ebfff;
+    --color-blue--light: #6fcfff;
+    --color-white: #ffffff;
+    --color-dark: #2b313d;
+    --color-grey: #7d7b7d;
+    --color-grey--light: #aaabad;
+    --color-yellow: #fad604;
+    --color-pink: #ff7d6d;
+    --color-green: #2c7564;
+    --color-green--light: #9cd9ca;    
+}
+
+/**************************************************
+* Reset
+**************************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/**************************************************
+* Animation Stopper
+**************************************************/
+.resize-animation-stopper * {
+    transition: none !important;
+    animation: none !important;
+}
+
+/**************************************************
+* Typography
+**************************************************/
+html,
+body {
+    font-family: var(--body-font);
+    font-size: 100%;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+
+h1, h2, h3, h4 {
+    font-family: var(--header-font);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    color: var(--color-dark);
+}
+
+h1 {
+    font-size: 1.953rem;
+    text-transform: uppercase;
+    letter-spacing: .25em;    
+}
+
+h2 {
+    font-size: 1.563rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+h4 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--color-grey--light);
+    letter-spacing: .25rem;    
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--color-dark);
+}
+
+/****************************************************************************************************
+* COMMON STYLES
+****************************************************************************************************/
+
+/**************************************************
+* Layout
+**************************************************/
+.wrapper {
+    width: 100%;
+    max-width: 90rem;
+    margin: 0 auto;
+}
+
+/**************************************************
+* Button Styles
+**************************************************/
+.btn {
+    display: inline-flex;
+    align-items: center;
+    height: 3rem;
+    border-radius: 3rem;
+    padding: 0 1.5rem;
+    font-family: var(--header-font);
+    font-size: .875rem;
+    text-transform: uppercase;
+    background: var(--color-yellow);
+    color: var(--color-dark);
+    transition: background .3s, color .3s;
+}
+
+.btn:hover {
+    background: var(--color-blue--light);
+    color: var(--color-white);
+}
+
+/**************************************************
+* LINK BUTTON
+**************************************************/
+.link-underlined {
+    position: relative;
+    display: inline-block;
+    font-family: var(--header-font);
+    text-transform: uppercase;
+    font-size: .875rem;
+    font-weight: 900;
+    color: var(--color-dark);
+    padding: .25rem;
+    line-height: .75;    
+}
+
+.link-underlined:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: .4rem;
+    border-radius: .4rem;
+    background: var(--color-yellow);
+    z-index: -1;
+    opacity: 0.2;
+    transition: opacity .1s;
+}
+
+.link-underlined--alt:before {
+    background-color: var(--color-pink);
+}
+
+/* Hover states */
+.link-underlined:hover:before {
+    opacity: 1;
+}
+
+/**************************************************
+* Image
+**************************************************/
+.img-responsive {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+/****************************************************************************************************
+* STYLES
+****************************************************************************************************/
+
+/**************************************************
+* Hero
+**************************************************/
+.hero {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 30rem;    
+    padding: 0 1rem;
+    background-color: var(--color-blue);
+    background: url('../images/mobile/image-header.jpg') no-repeat center 75%;
+    background-size: cover;
+}
+
+/* Header */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+}
+
+/* Site brand logo */
+.brand a {
+    display: inline-block;
+    padding: 1rem;
+    line-height: 1;
+    margin: 0 -1rem;
+}
+
+.brand img {
+    width: 7.75rem;
+}
+
+/* Nav Toggle */
+.nav-toggle {
+    background: transparent;
+    border: 0;
+    padding: 1rem;
+    cursor: pointer;
+    margin: 0 -1rem;
+}
+
+/* Nav list */
+.site-nav {
+    position: absolute;    
+    left: 1rem;
+    right: 1rem;        
+    background: var(--color-white);
+    padding: 1.5rem;
+    text-align: center;
+    z-index: 999;    
+
+    top: 5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: top .5s, opacity .5s;        
+}
+
+.site-nav:after {
+    content: '';
+    position: absolute;
+    top: -1.5rem;
+    right: 0;
+    display: block;
+    width: 0; 
+    height: 0; 
+    border-left: 1.5rem solid transparent;
+    border-bottom: 1.5rem solid var(--color-white);
+}
+
+.site-nav.site-nav--active {
+    top: 6rem;
+    opacity: 1;
+    pointer-events: initial;     
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.nav-list a:not(.btn) {
+    display: inline-block;
+    padding: .5rem;
+    color: var(--color-grey);
+}
+
+.nav-list .btn {
+    margin-top: 1rem;
+}
+
+/* Hero Body */
+.hero-body {
+    position: relative;
+    flex: 1;
+    text-align: center;
+}
+
+.hero-body h1 {
+    margin: 2rem 0 0;
+    color: #fff;
+}
+
+.hero-body h1 span {
+    display: block;
+}
+
+.hero-body a {
+    display: inline-block;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    transition: padding-top .3s;
+}
+
+.hero-body a:hover {
+    padding-top: 2rem;
+}
+
+.hero-body a img {
+    height: 5rem;
+}
+
+/**************************************************
+* Panels
+**************************************************/
+.panel {
+    position: relative;
+}
+
+.panel--text {
+    padding: 3.5rem 1rem;
+    text-align: center;
+    max-width: 30rem;
+    margin: 0 auto;
+}
+
+.panel--text p {
+    color: var(--color-grey);
+}
+
+.panel__overlay {
+    position: absolute;
+    bottom: 11%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 21rem;
+    font-size: .875rem;  
+    line-height: 1.6;  
+}
+
+.panel__overlay h3,
+.panel__overlay p {
+    color: #000;
+    opacity: 0.7;
+}
+
+.panel__overlay p {
+    margin: 0;
+}
+
+.panel__overlay h3 {
+    margin-bottom: 1.25rem;
+}
+
+/**************************************************
+* Testimonials
+**************************************************/
+.testimonials {
+    padding: 3rem 1rem;
+}
+
+.testimonials__title {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.testimonials__list {
+    display: grid;
+    gap: 3rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.testimonial {
+    max-width: 22rem;
+}
+
+.testimonial__image {
+    border-radius: 50%;
+    max-width: 4.6875rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial__name {
+    font-family: var(--header-font);
+    font-weight: 900;
+    margin-top: 1.5rem;
+    margin-bottom: .25rem;
+}
+
+.testimonial__job {
+    color: var(--color-grey--light);
+    font-size: .75rem;
+}
+
+/**************************************************
+* Image Gallery
+**************************************************/
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-gallery__item {
+    width: 50%;
+}
+
+/**************************************************
+* Footer
+**************************************************/
+.site-footer {
+    background: var(--color-green--light);
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.site-footer__logo {
+    margin-bottom: 1.5rem;
+}
+
+.site-footer__logo img {
+    filter: invert(37%) sepia(7%) saturate(3039%) hue-rotate(116deg) brightness(50%) contrast(90%);
+}
+
+.footer-nav {
+    margin-bottom: 4rem;
+}
+
+.footer-nav__list, 
+.footer-social__list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    
+}
+
+.footer-nav__list a {
+    color: var(--color-green);
+    transition: color .1s;
+}
+
+.footer-nav__list a:hover {
+    color: var(--color-white);
+}
+
+.footer-social__list {
+    gap: 1.5rem;
+}
+
+.footer-social__list a img {
+    transition: filter .1s;
+}
+
+.footer-social__list a:hover img {
+    filter: brightness(0) invert(1);
+}
+
+
+/****************************************************************************************************
+* BREAKPOINT SMALL
+****************************************************************************************************/
+@media screen and (min-width: 25rem) {    
+    .panel__overlay {    
+        bottom: 8vw;
+    }
+}
+
+@media screen and (min-width: 37.5rem) {    
+    /**************************************************
+    * TYPOGRAPHY
+    **************************************************/  
+    h1 {
+        font-size: 2.441rem;
+        letter-spacing: .5rem;
+    }
+    
+    h2 {
+        font-size: 1.953rem;
+    }
+    
+    h3 {
+        font-size: 1.563rem;
+    }
+    
+    h4 {
+        font-size: 1.125rem;
+    }
+
+    /**************************************************
+    * HERO
+    **************************************************/  
+    .hero {        
+        height: 40rem;   
+        background-image: url('../images/desktop/image-header.jpg');
+    }
+
+    /* header */
+    .site-header {
+        height: 6.5rem;
+    }
+
+    .brand img {
+        width: 9.5rem;
+    }
+
+    /* Nav */
+    .site-nav {
+        left: auto;
+        width: 20rem;
+    }
+
+    .site-nav.site-nav--active {
+        top: 6.5rem;
+    }    
+    
+    /* Hero Body */
+    .hero-body h1 {
+        margin-top: 3rem;
+    }
+
+    .hero-body h1 span {
+        display: initial;
+    }
+
+    .hero-body a {
+        margin-top: 2.5rem;
+    }
+
+    .hero-body a img {
+        height: 8rem;
+    }        
+
+    /**************************************************
+    * Image Gallery
+    **************************************************/
+    .image-gallery__item {
+        width: 25%;
+    }
+}
+
+/****************************************************************************************************
+* BREAKPOINT MEDIUM
+****************************************************************************************************/
+@media screen and (min-width: 45rem) { 
+
+    /**************************************************
+    * Panels
+    **************************************************/
+    .panels {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        position: relative;
+    }
+
+    .panel--image {
+        margin: 0;
+    }
+
+    .panel--text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 1rem;
+        text-align: left;
+    }        
+
+    .panels--transform .panel--image {
+        order: 2;
+    }
+
+    .panels--transform .panel--text {
+        order: 1;
+    }
+
+    /* Panels */
+    .panel__overlay {    
+        bottom: 0;
+    }
+
+    .panel--text {
+        padding: 0 10%;
+    }
+    
+    .panel__overlay {    
+        bottom: 5%;
+    }
+
+    /**************************************************
+    * Testimonials
+    **************************************************/
+    .testimonials {
+        padding: 5rem 1rem;
+        max-width: 68rem;
+        margin: 0 auto;
+    }
+
+    .testimonials__title {
+        margin-bottom: 3.5rem;
+    }
+
+    .testimonials__list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .testimonial {
+        margin-bottom: 0;        
+    }
+
+    .testimonial__image {        
+        margin-bottom: 2rem;
+    }
+
+    .testimonial__name {
+        margin-top: 2.75rem;
+    }
+
+
+    /**************************************************
+    * Footer
+    **************************************************/
+    .site-footer {
+        padding: 5rem 1rem;
+    }
+}
+
+/****************************************************************************************************
+* BREAKPOINT LARGE
+****************************************************************************************************/
+@media screen and (min-width: 60rem) {
+    /**************************************************
+    * TYPOGRAPHY
+    **************************************************/  
+    h1 {
+        font-size: 3.052rem;
+        letter-spacing: .5rem;
+    }
+    
+    h2 {
+        font-size: 2.441rem;
+    }
+    
+    h3 {
+        font-size: 1.953rem;
+    }
+    
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    /**************************************************
+    * BUTTON
+    **************************************************/  
+    .btn {
+        background: var(--color-white);
+        height: 3.5rem;
+        border-radius: 3.5rem;
+        padding: 0 2rem;
+    }
+
+    /**************************************************
+    * HERO
+    **************************************************/  
+    .hero {        
+        height: 48rem;   
+        padding: 0 2rem;
+    }
+
+    /* Header */
+    .site-header {
+        height: 7.5rem;
+    }
+
+    .brand img {
+        width: 11rem;
+    }
+
+    /* Nav */
+    .nav-toggle {
+        display: none;
+    }
+
+    .site-nav {
+        position: relative;
+        left: initial;
+        right: initial;
+        top: initial;
+        width: auto;
+        background: transparent;
+        pointer-events: initial;
+        opacity: 1;
+        transition: none;
+        padding: 0;
+    }
+
+    .site-nav:after {
+        display: none;
+    }
+
+    .site-nav.site-nav--active {
+        top: initial;
+    }
+
+    .nav-list {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .nav-list a:not(.btn) {
+        padding: 1rem;
+        color: var(--color-white);
+    }
+    
+    .nav-list .btn {
+        margin-top: auto;
+        margin-left: 1rem;
+    }
+
+    /* Hero Body */
+    .hero-body h1 {
+        margin-top: 5rem;
+    }
+
+    .hero-body a {
+        margin-top: 4rem;
+    }
+
+    /**************************************************
+    * Panels
+    **************************************************/
+    .panel--text {
+        padding: 0 20%;
+        max-width: initial;
+    }        
+
+    .panel__overlay {
+        bottom: 10%;
+    }
+
+    .panel__overlay h3 {
+        margin-bottom: 1.5rem;
+    }
+
+    /**************************************************
+    * Testimonials
+    **************************************************/
+    .testimonials {
+        padding: 10rem 1rem;
+    }
+
+    .testimonials__title {
+        margin-bottom: 5rem;
+    }
+
+    .testimonial__image {        
+        margin-bottom: 3rem;
+    }
+
+    .testimonial__name {
+        margin-top: 4rem;
+    }
+
+
+}

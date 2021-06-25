@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <title>Frontend Mentor | Sunnyside agency landing page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap" rel="stylesheet">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">  
+
+    <section class="hero">    
+      <header class="site-header">
+        <div class="brand">
+          <a href="#">
+            <img src="images/logo.svg" />
+          </a>
+        </div>
+        <button id="nav-toggle" class="nav-toggle">
+          <img src="images/icon-hamburger.svg" />
+        </button>
+        <nav id="site-nav" class="site-nav">
+          <ul class="nav-list">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#" class="btn">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="hero-body">
+        <h1>We are <span>creatives</span></h1>
+        <a href="#">
+          <img src="images/icon-arrow-down.svg" />
+        </a>
+      </div>
+    </section>
+
+    <section class="panels panels--transform">
+      <div class="panel panel--image">        
+        <picture>
+          <source media="(max-width: 599px)" srcset="images/mobile/image-transform.jpg">
+          <source media="(min-width: 600px)" srcset="images/desktop/image-transform.jpg">
+          <img class="img-responsive" src="images/desktop/image-transform.jpg" />
+        </picture>
+      </div>
+      <div class="panel panel--text">
+        <h2>Transform your brand</h2>
+        <p>We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.</p>
+        <div><a href="#" class="link-underlined">Learn more</a></div>
+      </div>      
+    </section>
+
+    <section class="panels panels--stand-out">
+      <div class="panel panel--image">        
+        <picture>
+          <source media="(max-width: 599px)" srcset="images/mobile/image-stand-out.jpg">
+          <source media="(min-width: 600px)" srcset="images/desktop/image-stand-out.jpg">
+          <img class="img-responsive" src="images/desktop/image-stand-out.jpg" />
+        </picture>
+      </div>
+      <div class="panel panel--text">
+        <h2>Stand out to the right audience</h2>
+        <p>Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places.</p>
+        <div><a href="#" class="link-underlined link-underlined--alt">Learn more</a></div>
+      </div>      
+    </section>
+
+    <section class="panels panels--skills">
+      <div class="panel panel--image">        
+        <picture>
+          <source media="(max-width: 399px)" srcset="images/mobile/image-graphic-design.jpg">
+          <source media="(min-width: 400px)" srcset="images/desktop/image-graphic-design.jpg">
+          <img class="img-responsive" src="images/desktop/image-graphic-design.jpg" />
+        </picture>
+        <div class="panel__overlay">
+          <h3>Graphic design</h3>
+          <p>Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’ attention.</p>
+        </div>
+      </div>
+      <div class="panel panel--image">        
+        <picture>
+          <source media="(max-width: 399px)" srcset="images/mobile/image-photography.jpg">
+          <source media="(min-width: 400px)" srcset="images/desktop/image-photography.jpg">
+          <img class="img-responsive" src="images/desktop/image-photography.jpg" />
+        </picture>
+        <div class="panel__overlay">
+          <h3>Photography</h3>
+          <p>Increase your credibility by getting the most stunning, high-quality photos that improve your business image.</p>
+        </div>
+    </section>
+  
+    <section class="testimonials">
+      <div class="testimonials__title">
+        <h4>Client testimonials</h4>
+      </div>
+      <div class="testimonials__list">
+        <div class="testimonial">
+          <img class="testimonial__image" src="images/image-emily.jpg" />
+          <p>We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.</p>
+          <p class="testimonial__name">Emily R.</p>
+          <p class="testimonial__job">Marketing Director</p>
+        </div>
+        <div class="testimonial">
+          <img class="testimonial__image" src="images/image-thomas.jpg" />
+          <p>Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.</p>
+          <p class="testimonial__name">Thomas S.</p>
+          <p class="testimonial__job">Chief Operating Officer</p>
+        </div>
+        <div class="testimonial">
+          <img class="testimonial__image" src="images/image-jennie.jpg" />
+          <p>Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!</p>
+          <p class="testimonial__name">Jennie F.</p>
+          <p class="testimonial__job">Business Owner</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="image-gallery">
+      <div class="image-gallery__item">
+        <picture>
+          <source media="(max-width: 599px)" srcset="images/mobile/image-gallery-milkbottles.jpg">
+          <source media="(min-width: 600px)" srcset="images/desktop/image-gallery-milkbottles.jpg">
+          <img class="img-responsive" src="images/desktop/image-gallery-milkbottles.jpg" />
+        </picture>
+      </div>
+      <div class="image-gallery__item">
+        <picture>
+          <source media="(max-width: 599px)" srcset="images/mobile/image-gallery-orange.jpg">
+          <source media="(min-width: 600px)" srcset="images/desktop/image-gallery-orange.jpg">
+          <img class="img-responsive" src="images/desktop/image-gallery-orange.jpg" />
+        </picture>
+      </div>
+      <div class="image-gallery__item">
+        <picture>
+          <source media="(max-width: 599px)" srcset="images/mobile/image-gallery-cone.jpg">
+          <source media="(min-width: 600px)" srcset="images/desktop/image-gallery-cone.jpg">
+          <img class="img-responsive" src="images/desktop/image-gallery-cone.jpg" />
+        </picture>
+      </div>
+      <div class="image-gallery__item">
+        <picture>
+          <source media="(max-width: 599px)" srcset="images/mobile/image-gallery-sugarcubes.jpg">
+          <source media="(min-width: 600px)" srcset="images/desktop/image-gallery-sugarcubes.jpg">
+          <img class="img-responsive" src="images/desktop/image-gallery-sugarcubes.jpg" />
+        </picture>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__logo">
+        <img src="images/logo.svg" />
+      </div>
+      <nav class="footer-nav">
+        <ul class="footer-nav__list">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Projects</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-social">
+        <ul class="footer-social__list">
+          <li>
+            <a href="#">
+              <img src="images/icon-facebook.svg" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/icon-instagram.svg" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/icon-twitter.svg" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/icon-pinterest.svg" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/TerrylBrown">Terryl Brown</a>.
+  </div>
+
+  <script src="js/main.js"></script>
+  <script> </script>
+</body>
+</html>
